@@ -1,0 +1,53 @@
+:root {
+  --blue: #0023ff;
+}
+
+.ui-btn-element {
+  font-weight: 900;
+  color: #fff;
+  background: var(--blue);
+  font-size: 18px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 16px 50px;
+  border-radius: 30px;
+  transition: background .1s ease-in-out;
+
+  @media (--large) {
+    padding: 12px 46px;
+    font-size: 16px;
+  }
+
+  @media (--medium) {
+    padding: 10px 44px;
+    font-size: 13px;
+  }
+
+  &:hover {
+    background: #132fe2;
+  }
+}
+
+.ui-circle-btn {
+  display: inline-flex;
+  size: 87px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 25px 0px rgba(219, 219, 219, .5);
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out;
+  z-index: 999;
+  @media (--large) {
+    size: 70px;
+  }
+
+  @media (--medium) {
+    size: 60px;
+  }
+
+  &:hover {
+    box-shadow: 5px 8px 25px 0px rgba(219, 219, 219, .8);
+  }
+}
