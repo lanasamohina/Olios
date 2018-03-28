@@ -15,6 +15,43 @@
   padding-top: 20.3vh;
 }
 
+.main-preview__bg-descr{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 18.4vh;
+  color: rgba(231,231,231,.7);
+  font-size: 400px;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: -1;
+
+  @media (--xlarge) {
+    top: 21vh;
+    font-size: 286px;
+  }
+
+  @media (--large) {
+    top: 23vh;
+    font-size: 200px;
+  }
+
+  @media (--medium) {
+    top: 22vh
+    font-size: 180px;
+  }
+
+  @media (--small) {
+    font-size: 140px;
+    top: 22vh;
+  }
+
+  @media (--xsmall) {
+    font-size: 90px;
+  }
+
+}
+
 .main-preview__title {
   margin-top: 0;
   text-transform: uppercase;
