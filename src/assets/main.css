@@ -11,8 +11,11 @@
 */
 
 @import "../components/main-aside.css";
+@import "../components/main-menu.css";
+
 
 /*
     Pages
 */
 @import "../components/main-preview.css";
+@import "../components/search.css";

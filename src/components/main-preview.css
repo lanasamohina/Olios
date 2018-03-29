@@ -37,7 +37,7 @@
   }
 
   @media (--medium) {
-    top: 22vh
+    top: 22vh;
     font-size: 180px;
   }
 
