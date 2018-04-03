@@ -1,6 +1,6 @@
 .main-menu{
     size: 370px 100vh;
-    position: absolute 0 0 * *;
+    position: fixed 0 0 * *;
     z-index: 999;
     background: #fff;
     display: flex;
