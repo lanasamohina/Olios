@@ -92,14 +92,3 @@
     margin-top: 85px;
 }
 
-.preloader{
-    position: absolute;
-    z-index: 9999;
-    size: 100% 225px;
-    background: url("../img/ajax-loader.gif") center center no-repeat;
-    display: none;
-}
-
-.preloader--active{
-    display: block;
-}

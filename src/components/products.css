@@ -1,0 +1,161 @@
+.products__top {
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.products__grid-wrap {
+    margin: 50px -30px 100px -30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__link {
+    margin: 40px 30px 0 30px;
+}
+
+.products__main-title {
+    font-size: 75px;
+    margin-top: 0;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.products__page-category {
+    font-size: 18px;
+    color: #c1c1c1;
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+
+    &:after{
+    content: "";
+    display: block;
+    height: 65px;
+    width: 55px;
+    margin-left: 35px;
+    background: url("../img/livingRoomIcon.svg") center center no-repeat;
+     }
+}
+
+.small-card, .large-card, .medium-card{
+    display: block;
+    background: #fff;
+}
+
+.small-card {
+    width: 350px;
+}
+
+.large-card {
+    width: 1130px;
+}
+
+.medium-card {
+    width: 725px;
+}
+
+.small-card__container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 65px 30px 30px 30px;
+    margin: 0;
+}
+
+.large-card__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 90px 0 80px ;
+    margin: 0;
+}
+
+.medium-card__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 40px 0 0;
+    margin: 0;
+}
+
+.small-card__img {
+    max-width: 170px;
+    display: block;
+}
+
+.large-card__img {
+    max-width: 450px;
+    margin-right: 100px;
+}
+
+.medium-card__img {
+    max-width: 370px;
+    margin-right: 50px;
+}
+
+.small-card__descr-wrap {
+    margin-top: 80px;
+}
+
+.small-card__title {
+    color: #000;
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.large-card__title{
+    font-size: 47px;
+}
+
+.small-card__descr {
+    display: block;
+    color: #a8a8a8;
+    font-size: 18px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    margin: 10px 0 15px 0;
+}
+
+.large-card__descr{
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 65px;
+}
+
+.small-card__price {
+    color: #0023ff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.large-card__price{
+    font-size: 28px;
+}
+
+.products__load-more-wrap {
+    margin: 10px auto 140px auto;
+    text-align: center;
+}
+
+.products__load-more{
+    display: inline-flex;
+    background: none;
+    border: none;
+    color: #0023ff;
+    font-size: 18px;
+    letter-spacing: 0px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+.products__load-more--hide{
+    display: none;
+}

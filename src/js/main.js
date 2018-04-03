@@ -41,6 +41,14 @@ function init () {
             return (typeof v !== "undefined" && v !== null) ? v : "";
         });
     }
+    function preloaderShow() {
+        preloader.classList.add('preloader--active');
+    }
+
+    function preloaderHide() {
+        preloader.classList.remove('preloader--active');
+    }
+
 
     function Search () {
         const textField = document.getElementById('search');
@@ -50,13 +58,6 @@ function init () {
         let preloader = document.getElementById('preloader');
         let locker = false;
 
-        function preloaderShow() {
-            preloader.classList.add('preloader--active');
-        }
-
-        function preloaderHide() {
-            preloader.classList.remove('preloader--active');
-        }
 
         const getData = function(request, callback){
             if (request === ''){
@@ -89,14 +90,6 @@ function init () {
                 document.querySelector('.result-count').classList.remove('result-count--active');
             }
 
-       /*    if (data.length === 0){
-                const span = document.createElement('span');
-                span.textContent = 'Result not found';
-                list.appendChild(span);
-                span.classList.add('trade-list__not-found');
-                return;
-            }*/
-
             document.querySelector('.search-form__reset').classList.add('search-form__reset--active');
             if (ln < 1 &&  textField.value === '' ){
                 document.querySelector('.search-form__reset').classList.remove('search-form__reset--active');
@@ -126,5 +119,49 @@ function init () {
             //initLayout(response);
         });
     }
-    Search();
+    if (document.getElementById('search') !== null) Search();
+
+
+    const container = document.querySelector('.products__grid-wrap');
+    const loadMore = document.querySelector('.products__load-more');
+
+    const PRODUCTS_DB = [
+        { cardTitle: 'White Seat', cardUrl: 'google.com', cardImgPath: 'img/whiteSeat.png', cardDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', cardPrice: '$42', cardType:'small'},
+        { cardTitle: 'Modern Bed', cardUrl: 'google.com', cardImgPath: 'img/bed2.jpg', cardDescr: 'Lorem ipsum dolor sit amet, consectetur', cardPrice: '$120', cardType:'medium'},
+        { cardTitle: 'Red Seat 2', cardUrl: 'google.com', cardImgPath: 'img/red.jpg', cardDescr: 'Lorem ipsum dolor sit amet', cardPrice: '$40', cardType:'small'},
+        { cardTitle: 'Dark Bed', cardUrl: 'google.com', cardImgPath: 'img/bed.jpg', cardDescr: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit', cardPrice: '$140', cardType:'large'},
+        { cardTitle: 'blue Seat', cardUrl: 'google.com', cardImgPath: 'img/blue.jpg', cardDescr: 'Lorem ipsum dolor sit amet', cardPrice: '$35', cardType:'small'},
+        { cardTitle: 'rebecca Seat', cardUrl: 'google.com', cardImgPath: 'img/rebecca.jpg', cardDescr: 'Lorem ipsum dolor sit amet, consectetur', cardPrice: '$35', cardType:'small'},
+        { cardTitle: 'Seat', cardUrl: 'google.com', cardImgPath: 'img/seat.jpg', cardDescr: 'Lorem ipsum dolor sit amet', cardPrice: '$35', cardType:'large'},
+    ];
+    const dbLength = PRODUCTS_DB.length;
+    let download = 0;
+
+    function loadCards() {
+        let currentProductNumber = 0;
+        const maxDownloadPerClick = 2;
+
+        for (let i = download; i < PRODUCTS_DB.length; i++) {
+            let content = '';
+            if (currentProductNumber < maxDownloadPerClick && download < dbLength) {
+                let card = PRODUCTS_DB[i];
+                content = nunjucks.render('../templates/'+card['cardType']+'-card.njk', card);
+                currentProductNumber++;
+                download++;
+
+                if(dbLength === download){
+                    loadMore.classList.add('products__load-more--hide');
+                }
+            }
+            container.innerHTML += content;
+        }
+    }
+
+    loadMore.addEventListener('click', ev => {
+        preloaderShow();
+        setTimeout(()=>{
+            preloaderHide();
+            loadCards();
+        },1200);
+    });
 }

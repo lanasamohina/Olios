@@ -59,7 +59,7 @@
 .menu-btn {
   outline: none;
   z-index: 1000;
-  position: absolute 55px 55px * *;
+  position: fixed 55px 55px * *;
 & .menu-btn__icon-menu{
     display: block;
   }
@@ -73,6 +73,6 @@
    display: block;
  }
 @media (--xsmall) {
-  position: absolute 30px 30px * *;
+  position: fixed 30px 30px * *;
 }
 }

@@ -47,3 +47,35 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 99;
   width: 1024px;
 }
+
+.container--products{
+  margin: * auto;
+  position: relative;
+  z-index: 99;
+  max-width: 1550px;
+}
+
+.products-auto-height{
+  min-height: 100vh;
+}
+
+.body-no-overflow{
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+.preloader{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  width: 200px;
+  height: 200px;
+  background: url(../img/ajax-loader.gif) center center no-repeat;
+  transform: translateX(-50%);
+  display: none;
+}
+
+.preloader--active{
+  display: block;
+}
