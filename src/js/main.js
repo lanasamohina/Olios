@@ -145,7 +145,7 @@ function init () {
             let content = '';
             if (currentProductNumber < maxDownloadPerClick && download < dbLength) {
                 let card = PRODUCTS_DB[i];
-                content = nunjucks.render('../templates/'+card['cardType']+'-card.njk', card);
+                content = nunjucks.render('./templates/'+card['cardType']+'-card.njk', card);
                 currentProductNumber++;
                 download++;
 
